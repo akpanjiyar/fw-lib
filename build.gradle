@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id "org.springframework.boot" version "1.5.7.RELEASE"
+    id 'maven' //this plugin will help to run install task to move the jar to mavenLocal repository.(./gradlew install)
+}
+
+group 'com.ap.fw'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    //@Aspect/@Entity can be used if spring-boot-starter-data-jpa available
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+//bootRepackage needs to be disabled else ./gradlew build fails due to absence of main method(@SpringBootApplication class)
+bootRepackage {
+    enabled = false
+}
+
+
