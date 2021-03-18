@@ -1,0 +1,13 @@
+#ideaJ files
+.idea
+
+#Gradle temp files
+.gradle
+gradle
+gradlew
+gradlew.bat
+
+#build folder
+build
+out
+
